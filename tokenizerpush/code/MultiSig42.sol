@@ -1,21 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-// ============================================================
-//  MultiSig42 — Multisignature Wallet (Bonus)
-//  Controls iassafe42 (IAS42) token transfers.
-//  Requires multiple owner approvals before any transfer executes.
-// ============================================================
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-/**
- * @title   MultiSig42
- * @notice  A multisig wallet for IAS42 tokens.
- *          Owners submit → confirm → execute token transfers.
- *          A transfer only goes through once `requiredConfirmations`
- *          approvals have been collected.
- */
+
 contract MultiSig42 {
 
     // ----------------------------------------------------------------
@@ -37,32 +26,26 @@ contract MultiSig42 {
     // ----------------------------------------------------------------
 
     struct Transaction {
-        address to;             // Recipient
-        uint256 amount;         // IAS42 amount (18 decimals)
-        bool    executed;       // True once executed
-        uint256 confirmations;  // Number of approvals
+        address to;
+        uint256 amount;
+        bool    executed;
+        uint256 confirmations;
     }
 
     // ----------------------------------------------------------------
     // State
     // ----------------------------------------------------------------
 
-    /// @notice The IAS42 token this multisig controls
     IERC20 public immutable token;
 
-    /// @notice Ordered list of authorised signers
     address[] public owners;
 
-    /// @notice Quick ownership lookup
     mapping(address => bool) public isOwner;
 
-    /// @notice Minimum approvals needed to execute
     uint256 public immutable requiredConfirmations;
 
-    /// @notice All submitted transactions
     Transaction[] public transactions;
 
-    /// @notice txId → owner → confirmed?
     mapping(uint256 => mapping(address => bool)) public hasConfirmed;
 
     // ----------------------------------------------------------------
@@ -93,11 +76,6 @@ contract MultiSig42 {
     // Constructor
     // ----------------------------------------------------------------
 
-    /**
-     * @param _token                 Address of the deployed iassafe42 contract
-     * @param _owners                Authorised signer addresses (min 2)
-     * @param _requiredConfirmations Minimum approvals to execute (min 2)
-     */
     constructor(
         address _token,
         address[] memory _owners,
@@ -127,12 +105,7 @@ contract MultiSig42 {
     // Core workflow
     // ----------------------------------------------------------------
 
-    /**
-     * @notice Propose a new token transfer.
-     * @param  to     Recipient address
-     * @param  amount IAS42 amount to transfer
-     * @return txId   ID of the created transaction
-     */
+
     function submitTransaction(address to, uint256 amount)
         external
         onlyOwner
@@ -152,10 +125,7 @@ contract MultiSig42 {
         emit TransactionSubmitted(txId, msg.sender, to, amount);
     }
 
-    /**
-     * @notice Approve a pending transaction.
-     * @param  txId Transaction ID
-     */
+
     function confirmTransaction(uint256 txId)
         external
         onlyOwner
@@ -168,10 +138,7 @@ contract MultiSig42 {
         emit TransactionConfirmed(txId, msg.sender);
     }
 
-    /**
-     * @notice Withdraw a previously given approval.
-     * @param  txId Transaction ID
-     */
+
     function revokeConfirmation(uint256 txId)
         external
         onlyOwner
@@ -184,11 +151,7 @@ contract MultiSig42 {
         emit ConfirmationRevoked(txId, msg.sender);
     }
 
-    /**
-     * @notice Execute a transaction once enough confirmations are gathered.
-     * @dev    The contract must hold sufficient IAS42 tokens.
-     * @param  txId Transaction ID
-     */
+
     function executeTransaction(uint256 txId)
         external
         onlyOwner
@@ -214,17 +177,14 @@ contract MultiSig42 {
     // View helpers
     // ----------------------------------------------------------------
 
-    /// @notice Returns all owner addresses
     function getOwners() external view returns (address[] memory) {
         return owners;
     }
 
-    /// @notice Returns the number of transactions ever submitted
     function transactionCount() external view returns (uint256) {
         return transactions.length;
     }
 
-    /// @notice Returns full details of a transaction
     function getTransaction(uint256 txId)
         external
         view
