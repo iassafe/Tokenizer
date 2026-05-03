@@ -12,7 +12,6 @@
 │   ├── deploy_notes.md        # Step-by-step deployment guide
 │   └── remix_deployment.md    # Remix IDE deployment record and tool explanation
 └── documentation/
-    ├── whitepaper.md           # General project overview
     ├── iassafe42_guide.md      # Token: all functions, deploy steps, usage
     └── MultiSig42_guide.md     # Multisig: workflow, all functions, security
 ```
@@ -65,19 +64,19 @@ guarantees compatibility with all wallets, explorers, and DeFi protocols.
 
 ## Token — iassafe42 (IAS42)
 
-| Property          | Value                             |
-|-------------------|-----------------------------------|
-| Name              | iassafe42                         |
-| Symbol / Ticker   | **IAS42**                         |
-| Standard          | ERC-20                            |
-| Network           | Ethereum Sepolia Testnet          |
-| Total Supply      | 42,000,000 IAS42                  |
-| Decimals          | 18                                |
-| Contract Address  | *(paste after deployment)*        |
+| Property          | Value                                       |
+|-------------------|---------------------------------------------|
+| Name              | iassafe42                                   |
+| Symbol / Ticker   | **IAS42**                                   |
+| Standard          | ERC-20                                      |
+| Network           | Ethereum Sepolia Testnet                    |
+| Total Supply      | 42,000,000 IAS42                            |
+| Decimals          | 18                                          |
+| Contract Address  | 0x9F03595b593E79b4eCE549AF3BFbD3581BB11C93  |
 
 Explorer link:
 ```
-https://sepolia.etherscan.io/token/<contract_address>
+https://sepolia.etherscan.io/token/0x9F03595b593E79b4eCE549AF3BFbD3581BB11C93
 ```
 
 ---
@@ -88,11 +87,11 @@ A multisignature wallet contract (`MultiSig42.sol`) is provided as the bonus par
 It controls IAS42 token transfers and requires at least **2 owner approvals** before
 any transfer executes, preventing a single compromised wallet from moving funds.
 
-MultiSig42 contract address: *(paste after deployment)*
+MultiSig42 contract address: 0xAD80F440160B5244602E2d59C56b719964234aa7
 
 Explorer link:
 ```
-https://sepolia.etherscan.io/address/<multisig_address>
+https://sepolia.etherscan.io/address/0xAD80F440160B5244602E2d59C56b719964234aa7
 ```
 
 ---
@@ -107,11 +106,3 @@ https://sepolia.etherscan.io/address/<multisig_address>
 | Sepolia Etherscan        | Block explorer — verify contracts and txs        |
 | Google Cloud Web3 Faucet | Free SepoliaETH for gas fees                     |
 
----
-
-## Security
-
-- **No real money** — Sepolia testnet only. SepoliaETH has zero monetary value.
-- **No API keys or passwords** are stored anywhere in this repository.
-- All transactions are signed locally by MetaMask — private keys never leave the browser.
-- The token name contains **42** as required by the project specification.

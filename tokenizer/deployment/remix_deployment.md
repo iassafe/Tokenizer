@@ -22,10 +22,10 @@ locally inside the browser. Nothing sensitive ever leaves the machine.
 
 ## Deployed Contracts
 
-| Contract     | Address                    | Network          |
-|--------------|----------------------------|------------------|
-| `iassafe42`  | *(paste after deployment)* | Ethereum Sepolia |
-| `MultiSig42` | *(paste after deployment)* | Ethereum Sepolia |
+| Contract     | Address                                     | Network          |
+|--------------|---------------------------------------------|------------------|
+| `iassafe42`  | 0x9F03595b593E79b4eCE549AF3BFbD3581BB11C93  | Ethereum Sepolia |
+| `MultiSig42` | 0xAD80F440160B5244602E2d59C56b719964234aa7  | Ethereum Sepolia |
 
 Explorer base URL: `https://sepolia.etherscan.io`
 
@@ -65,15 +65,3 @@ Explorer base URL: `https://sepolia.etherscan.io`
 ### Step 6 — Fund MultiSig42
 - Load iassafe42 in Remix using **At Address**
 - Call `transfer(MultiSig42Address, 1000000000000000000000)` to send 1000 IAS42
-
----
-
-## Transaction Record
-
-| Action                     | Tx Hash   | Block     |
-|----------------------------|-----------|-----------|
-| Deploy `iassafe42`         | *(paste)* | *(paste)* |
-| Deploy `MultiSig42`        | *(paste)* | *(paste)* |
-| Fund MultiSig42            | *(paste)* | *(paste)* |
-| Token transfer demo        | *(paste)* | *(paste)* |
-| MultiSig execute demo      | *(paste)* | *(paste)* |

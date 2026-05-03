@@ -14,27 +14,12 @@
 
 ## Deployed Contract Addresses
 
-| Contract     | Address                    | Explorer                                                 |
-|--------------|----------------------------|----------------------------------------------------------|
-| `iassafe42`  | *(paste after deployment)* | https://sepolia.etherscan.io/token/\<address\>           |
-| `MultiSig42` | *(paste after deployment)* | https://sepolia.etherscan.io/address/\<address\>         |
+| Contract     | Address                                    |  
+|--------------|--------------------------------------------|
+| `iassafe42`  | 0x9F03595b593E79b4eCE549AF3BFbD3581BB11C93 |
+| `MultiSig42` | 0xAD80F440160B5244602E2d59C56b719964234aa7 |
 
-> Ticker visible on Etherscan: **IAS42**
-> Token name visible on Etherscan: **iassafe42**
 
----
-
-## Transaction Record
-
-| Action                        | Tx Hash   | Block     |
-|-------------------------------|-----------|-----------|
-| Deploy `iassafe42`            | *(paste)* | *(paste)* |
-| Deploy `MultiSig42`           | *(paste)* | *(paste)* |
-| Fund MultiSig42 with IAS42    | *(paste)* | *(paste)* |
-| `approve` MultiSig42          | *(paste)* | *(paste)* |
-| `transferFrom` via MultiSig42 | *(paste)* | *(paste)* |
-
----
 
 ## Prerequisites
 
@@ -120,7 +105,7 @@ transfer(
 
 ---
 
-## Demonstrate the Token (for evaluation)
+## Demonstrate the Token
 
 ### Basic ERC-20 actions
 
@@ -157,11 +142,3 @@ confirmTransaction(0)
 executeTransaction(0)
 // → 100 IAS42 sent ✓
 ```
-
----
-
-## Security Notes
-
-- **No API key or password** is stored anywhere in this repository.
-- All transactions are signed locally by MetaMask — your private key never leaves your browser.
-- Sepolia is a testnet — SepoliaETH has **no monetary value**.

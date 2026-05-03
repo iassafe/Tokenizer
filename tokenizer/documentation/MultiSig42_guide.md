@@ -8,14 +8,14 @@ transfers**. It requires at least **2 owner approvals** before any transfer can 
 This prevents a single compromised wallet from moving funds — every transaction must
 be agreed upon by multiple parties.
 
-| Property               | Value                          |
-|------------------------|-------------------------------|
-| Contract               | MultiSig42                     |
-| Network                | Ethereum Sepolia Testnet       |
-| Controls token         | iassafe42 (IAS42)              |
-| Minimum owners         | 2                              |
-| Minimum confirmations  | 2                              |
-| Contract Address       | *(see README.md)*              |
+| Property               | Value                                      |
+|------------------------|------------------------------------------- |
+| Contract               | MultiSig42                                 |
+| Network                | Ethereum Sepolia Testnet                   |
+| Controls token         | iassafe42 (IAS42)                          |
+| Minimum owners         | 2                                          |
+| Minimum confirmations  | 2                                          |
+| Contract Address       | 0xAD80F440160B5244602E2d59C56b719964234aa7 |
 
 ---
 
@@ -236,3 +236,4 @@ revokeConfirmation(0)
 - You must fund the contract with IAS42 before any `executeTransaction` can succeed.
 - All transactions remain on-chain permanently, even after execution, for full auditability.
 - Owners cannot be added or removed after deployment — this is intentional to keep the contract simple and auditable.
+

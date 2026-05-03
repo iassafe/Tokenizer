@@ -4,16 +4,16 @@
 
 `iassafe42` is a standard ERC-20 token deployed on the Ethereum Sepolia testnet.
 
-| Property          | Value                          |
-|-------------------|-------------------------------|
-| Name              | iassafe42                      |
-| Symbol / Ticker   | IAS42                          |
-| Standard          | ERC-20                         |
-| Network           | Ethereum Sepolia Testnet       |
-| Decimals          | 18                             |
-| Total Supply      | 42,000,000 IAS42               |
-| Contract Address  | *(see README.md)*              |
-| Explorer          | https://sepolia.etherscan.io   |
+| Property          | Value                                       |
+|-------------------|---------------------------------------------|
+| Name              | iassafe42                                   |
+| Symbol / Ticker   | IAS42                                       |
+| Standard          | ERC-20                                      |
+| Network           | Ethereum Sepolia Testnet                    |
+| Decimals          | 18                                          |
+| Total Supply      | 42,000,000 IAS42                            |
+| Contract Address  | 0x9F03595b593E79b4eCE549AF3BFbD3581BB11C93  
+| Explorer          | https://sepolia.etherscan.io                |
 
 ---
 
